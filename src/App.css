@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: "roboto-rg";
+  src: local("roboto-rg"), url("./assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "roboto-lt";
+  src: local("roboto-lt"), url("./assets/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "roboto-bd";
+  src: local("roboto-bd"), url("./assets/fonts/Roboto/Roboto-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans"), url("./assets/fonts/OpenSans/OpenSans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Yellowtail";
+  src: local("Yellowtail"), url("./assets/fonts/Yellowtail/Yellowtail-Regular.ttf") format("truetype");
+}
+
+/* variables */
+
+:root {
+  --clr-main: #274c5b;
+  --clr-secondary: #7eb693;
+  --clr-third: #fff;
+  --clr-txt: #525c60;
+  --clr-btn-1: #274c5b;
+  --clr-btn-2: #efd372;
+  --transition: all 0.3s ease;
+  --size-icon: 5em;
+  --size--txt-1x: 1em;
+  --size--txt-2x: 2em;
+  --size--txt-3x: 3em;
+}
+
+/* global styles */
+
+button,
+input {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  font-family: "OpenSans";
+  font-size: var(--size--txt-1x);
+  color: var(--clr-txt);
+}
+
+main {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.section {
+  padding: 0 2rem;
+}
+
+.section--auto {
+  margin: 5rem auto;
+}
+
+.txt {
+  font-family: "Roboto";
+  color: var(--clr-main);
+}
+.txt--1x {
+  font-size: var(--size--txt-1x);
+}
+.txt--2x {
+  font-size: var(--size--txt-2x);
+}
+.txt--3x {
+  font-size: var(--size--txt-3x);
+}
+
+.txt--desc {
+  font-family: "Yellowtail";
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: var(--size--txt-2x);
+  color: var(--clr-secondary);
+}
+.txt--title {
+  font-family: "roboto-bd";
+  font-size: var(--size--txt-3x);
+  color: var(--clr-main);
+}
+.btn {
+  padding: 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  font-family: "roboto-rg";
+  font-size: var(--size--txt-1x);
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn .icon {
+  transition: var(--transition);
+}
+.btn:hover .icon {
+  margin-left: 10px;
+}
+.btn--secondary {
+  background-color: var(--clr-btn-2);
+  border: 1px solid var(--clr-btn-2);
+  color: var(--clr-main);
+}
+.btn--secondary:hover {
+  background-color: var(--clr-btn-1);
+  border: 1px solid var(--clr-btn-1);
+  color: var(--clr-third);
+}
+
+/* navbar */
+
+.nav {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--clr-third);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  width: 10em;
+}
+.nav__logo img {
+  width: 100%;
+}
+.nav__menu .menu__wrapper {
+  display: flex;
+  gap: 3rem;
+  color: var(--clr-main);
+  font-size: var(--size--txt-1x);
+}
+.nav__menu .menu__wrapper .nav__link.nav__link--active,
+.nav__menu .menu__wrapper .nav__link:hover {
+  transition: var(--transition);
+  color: var(--clr-secondary);
+}
+.nav__cart .cart__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 3rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 0.8em;
+}
+.nav__cart .cart__btn {
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: var(--size--txt-1x);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: var(--clr-btn-1);
+  color: var(--clr-third);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.nav__cart .cart__btn:hover {
+  background-color: var(--clr-btn-2);
+}
+
+/* header */
+
+.header {
+  width: 100%;
+  height: auto;
+  min-height: 90vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-image: url(./assets/images/header.png);
+  background-size: cover;
+}
+
+.header .txt--title {
+  width: 40%;
+}
